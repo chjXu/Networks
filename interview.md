@@ -1,3 +1,6 @@
+* [C\C++](#cc)
+
+
 # 1.介绍一下dropout和normalization以及他们在训练和预测时的区别，如何解决batch normalization在训练和预测时统计量不一致的问题
 
   dropout是在alexNet工作提出的，其用于卷积之后，使一部分神经元失活，目的是防止网络过拟合，使网络泛化能力更强。
