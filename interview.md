@@ -1,9 +1,9 @@
 # 目录
 * [C/C++](#cc)
-* [DeepLearning](#dl)
+* [DeepLearning](#DeepLearning)
 
 # C/C++
-###  new和malloc的区别
+##  new和malloc的区别
   属性:new/delete是C++关键字，需要编译器支持。malloc/free是库函数，需要头文件支持
   
   参数:使用new操作符申请内存分配时无须指定内存块的大小，编译器会根据类型信息自行计算。而malloc则需要显式地指出所需内存的尺寸。
@@ -19,7 +19,7 @@
 
 内存区域：new操作符从自由存储区（free store）上为对象动态分配内存空间，而malloc函数从堆上动态分配内存。
 
-### delete的几种方式
+## delete的几种方式
   delete 和 delete[]
   
   delete包含两步：（1）析构函数，每个对象各调用一次析构函数；（2）释放内存，内部调用全局的operator delete[](......)函数分配内存；如果类中重载了operator delete[](......)函数，则调用这个重载的函数
