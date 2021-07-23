@@ -7,6 +7,15 @@ Mobilenet V3 82.1%
 
 ![QQ截图20210720194130](https://user-images.githubusercontent.com/52600391/126318067-66b47327-8f4e-4f17-8b7d-2afe54ee4708.png)
 
+# Batch Normalization
+  ## 目的：
+  对于Conv2的feature map无法满足某一分布规律，提出BN使得feature map满足均值为0，方差为1的分布规律。
+  ## 处理：
+  对于一个d维的输入x，我们将对它的每一个维度进行标准化处理
+  ## 参数：
+  均值和方差 是由特征数据计算而来
+  \gama 和 \beita 是由训练学习而来
+
 # AlexNet
   
   1. 首次使用GPU进行网络加速训练
