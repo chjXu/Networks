@@ -14,9 +14,10 @@ Mobilenet V3 82.1%
   
   参数：均值和方差 是由特征数据计算而来;\gama 和 \beita 是由训练学习而来.
   
-  注意：1. 训练时，将training设为 true，推理时training设为 false；
-        2. batch size 尽量设大
-        3. 将 BN 放在卷积和激活层之间，卷积层不要使用 bias
+  注意：
+    1. 训练时，将training设为 true，推理时training设为 false；
+    2. batch size 尽量设大
+    3. 将 BN 放在卷积和激活层之间，卷积层不要使用 bias
 
 # AlexNet
   
