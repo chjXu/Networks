@@ -8,13 +8,15 @@ Mobilenet V3 82.1%
 ![QQ截图20210720194130](https://user-images.githubusercontent.com/52600391/126318067-66b47327-8f4e-4f17-8b7d-2afe54ee4708.png)
 
 # Batch Normalization
-  ## 目的：
-  对于Conv2的feature map无法满足某一分布规律，提出BN使得feature map满足均值为0，方差为1的分布规律。
-  ## 处理：
-  对于一个d维的输入x，我们将对它的每一个维度进行标准化处理
-  ## 参数：
-  均值和方差 是由特征数据计算而来
-  \gama 和 \beita 是由训练学习而来
+  目的：对于Conv2的feature map无法满足某一分布规律，提出BN使得feature map满足均值为0，方差为1的分布规律。
+  
+  处理：对于一个d维的输入x，我们将对它的每一个维度进行标准化处理
+  
+  参数：均值和方差 是由特征数据计算而来;\gama 和 \beita 是由训练学习而来.
+  
+  注意：1. 训练时，将training设为 true，推理时training设为 false；
+        2. batch size 尽量设大
+        3. 将 BN 放在卷积和激活层之间，卷积层不要使用 bias
 
 # AlexNet
   
