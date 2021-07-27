@@ -56,6 +56,11 @@ Mobilenet V3 82.1%
   ## V2
   1. Inverted Residuals(倒残差结构)。 倒残差结构先1x1升维，3x3 DW卷积， 在1x1降维。
   2. Linear Bottlenecks。在Bottlenecks的最后一层的激活函数使用线性激活函数，目的是为了防止ReLU对低维信息不敏感。
+
+  ## V3
+  1. 更新block（加入注意力机制，更新激活函数）
+  2. 使用NAS搜索参数
+  3. 重新设计耗时层结构
   
 # ResNet
 
