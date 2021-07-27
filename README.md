@@ -37,6 +37,25 @@ Mobilenet V3 82.1%
   2. 使用1x1的卷积核进行降维以及隐射处理
   3. 添加两个辅助分类器帮助训练
   4. 丢弃全连接层，使用平均池化层
+
+# MobileNet V1, V2, V3
+  
+  ## V1
+  1. 深度可分卷积（Depthwise Convolution）。本质上是将深度channel和特征的大小分开处理。
+  2. 超参数a，b。a 卷积核个数倍率，a 越小，网络参数量越小，但准确率降低；b 为输入图像分辨率参数。
+
+传统卷积 VS DW卷积
+
+    传统卷积核channel = 输入特征矩阵channel
+    输出特征矩阵channel = 卷积核个数
+    
+    DW卷积核channnel = 1
+    输入特征矩阵channel = 卷积核个数 = 输出特征矩阵channel
+因此，DW卷积与传统卷积最大的不同就是：传统卷积的卷积核channel为输入特征矩阵的channel。而DW卷积的卷积核channel为1，个数为输入特征矩阵通道数。
+
+  ## V2
+  1. Inverted Residuals(倒残差结构)。 倒残差结构先1x1升维，3x3 DW卷积， 在1x1降维。
+  2. Linear Bottlenecks。在Bottlenecks的最后一层的激活函数使用线性激活函数，目的是为了防止ReLU对低维信息不敏感。
   
 # ResNet
 
