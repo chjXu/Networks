@@ -90,13 +90,16 @@ Mobilenet V3 82.1%
   1. transformer之前主要是应用于NLP中
   2. transformer的提出主要是解决RNN，LSTM中计算无法并行化的问题（记忆化无限长）
   3. self-attention
+
       ![image](https://user-images.githubusercontent.com/52600391/130730453-d50ce5e8-df8d-4906-b0fd-1a1d55480ff4.png)
+      
   4. Multi-head self-attention
      Multihead = concat(head1, head2,...,headn)W
      先将输入与Q，K，W权重分别相乘之后，输出q,k,v特征，然后根据head个数将q,k,v均分为(q11,q12, k11,k12, v11,v12和q21,q22, k21,k22, v21,v22),再将（q11, k11,v11, q21, k21, v21）组成head1，head2类似。
      
 # Vision Transformer(ViT)
   纯Transformer模型
+  
   ![image](https://user-images.githubusercontent.com/52600391/130731719-3d8f64f3-0491-419c-9e76-f6d00ba65dfd.png)
   
   1. 图片分割为Patch
@@ -107,6 +110,7 @@ Mobilenet V3 82.1%
     
     
   Hybrid(CNN with Transformer) 混合模型较纯Transformer在训练次数变大时，正确率是不如纯模型的
+  
     ResNet50提取特征：
       采用StdConv2d而不是Conv2d;
       将BN替换为GroupNorm;
