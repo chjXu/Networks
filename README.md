@@ -118,7 +118,8 @@ Mobilenet V3 82.1%
   
   ViT16-model
   
- ![image](https://user-images.githubusercontent.com/52600391/130733424-dc0d6325-3bc1-41c6-99cf-feff7be6f3ba.png)
+  ![image](https://user-images.githubusercontent.com/52600391/130783169-e47ee457-0dcb-407b-b53d-91576357dd1f.png)
+
 
 
 
