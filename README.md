@@ -116,6 +116,8 @@ Mobilenet V3 82.1%
       将BN替换为GroupNorm;
       将stage4中的3个block移至stage3中。
   
+  ViT16-model
+  
  ![image](https://user-images.githubusercontent.com/52600391/130733424-dc0d6325-3bc1-41c6-99cf-feff7be6f3ba.png)
 
 
