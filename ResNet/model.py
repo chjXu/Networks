@@ -4,7 +4,7 @@ from torch.nn.modules.activation import ReLU
 from torch.nn.modules.batchnorm import BatchNorm2d
 
 class BasicBlock(nn.Module):
-    expansion = 1
+    expansion = 1   # 残差块之间的扩大倍数
 
     def __init__(self, in_channel, out_channel, stride=1, downsample=None, **kwargs):
         super(BasicBlock, self).__init__()
@@ -42,7 +42,7 @@ class Bottleneck(nn.Module):
     这么做的好处是能够在top1上提升大概0.5%的准确率。
     可参考Resnet v1.5 https://ngc.nvidia.com/catalog/model-scripts/nvidia:resnet_50_v1_5_for_pytorch
     """
-    expansion = 4
+    expansion = 4 #每一个残差块最后一块的channel为开始的4倍
 
     def __init__(self, in_channel, out_channel, stride=1, downsample=None,
                  groups=1, width_per_group=64):
@@ -103,16 +103,20 @@ class ResNet(nn.Module):
 
         self.groups = groups
         self.width_per_group = width_per_group
-
+        
+        #第一层conv
         self.conv1 = nn.Conv2d(3, self.in_channel, kernel_size=7, stride=2,
                                padding=3, bias=False)
         self.bn1 = nn.BatchNorm2d(self.in_channel)
         self.relu = nn.ReLU(inplace=True)
         self.maxpool = nn.MaxPool2d(kernel_size=3, stride=2, padding=1)
+        
+        #conv2_x
         self.layer1 = self._make_layer(block, 64, blocks_num[0])
         self.layer2 = self._make_layer(block, 128, blocks_num[1], stride=2)
         self.layer3 = self._make_layer(block, 256, blocks_num[2], stride=2)
         self.layer4 = self._make_layer(block, 512, blocks_num[3], stride=2)
+        
         if self.include_top:
             self.avgpool = nn.AdaptiveAvgPool2d((1, 1))  # output size = (1, 1)
             self.fc = nn.Linear(512 * block.expansion, num_classes)
