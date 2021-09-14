@@ -66,7 +66,7 @@ class MobileNetV2(nn.Module):
         last_channel = _make_divisible(1280 * alpha, round_nearest)
 
         inverted_residual_setting = [
-            # t, c, n, s
+            # t（扩展因子）, c（输出的channel）, n（bottlneck重复次数）, s（第一层布距）
             [1, 16, 1, 1],
             [6, 24, 2, 2],
             [6, 32, 3, 2],
